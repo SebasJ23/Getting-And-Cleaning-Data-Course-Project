@@ -1,0 +1,27 @@
+# This script helps produce the codebook for the variables measured.
+# To run this script, make sure you have previously run the script
+#run_analysis_width_tidy_data.R and the object widthtidydata is present in the
+#global environment. If you haven't done this yet, run the next line (line 5)
+# source("run_analysis_width_tidy_data.R")
+
+codebook<- data.frame(colnames(widthtidydata),colnames(widthtidydata))
+colnames(codebook)<-c("V1","V2")
+codebook$V2<-gsub("^Avg","(The average of) ", codebook$V2)
+codebook$V2<-gsub("Time","time domain ", codebook$V2)
+codebook$V2<-gsub("Frequency","frequency domain ", codebook$V2)
+codebook$V2<-gsub("Body","body ", codebook$V2)
+codebook$V2<-gsub("Acc","acceleration ", codebook$V2)
+codebook$V2<-gsub("Freq","frequency ", codebook$V2)
+codebook$V2<-gsub("Mean","mean ", codebook$V2)
+codebook$V2<-gsub("Std","standard deviation ", codebook$V2)
+codebook$V2<-gsub("Mag","magnitude ", codebook$V2)
+codebook$V2<-gsub("Mag","magnitude ", codebook$V2)
+codebook$V2<-sub("Gravity","gravity ", codebook$V2)
+codebook$V2<-sub("Gyro","gyroscope ", codebook$V2)
+codebook$V2<-sub("Jerk","Jerk signal ", codebook$V2)
+codebook$V2<-sub("X","in X direction ", codebook$V2)
+codebook$V2<-sub("Y","in Y direction ", codebook$V2)
+codebook$V2<-sub("Z","in Z direction ", codebook$V2)
+codebook$V2<-sub(" $","", codebook$V2)
+codebook$V1<-sub("^Avg","* Avg", codebook$V1)
+write.table(codebook, "codebook.txt", row.names = FALSE)

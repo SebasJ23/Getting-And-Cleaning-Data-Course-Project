@@ -16,17 +16,17 @@ This depository contains the following files:
 1. Make sure the following packages are installed in R:
     * dplyr
     * reshape2 (only for run_analysis_long_tidy_data.R)
-        If these packages have not been installed, use:
-        install.packages(c("dplyr", "reshape2"))
+      * If these packages have not been installed, use:
+   install.packages(c("dplyr", "reshape2"))
 2. Set your working directory in R, with function setwd(), to the folder containing all the files in this repository
 3. Execute one of the following scripts to obtain the tidy data set:
     * Run the run_analysis_long_tidy_data.R script if you want a long tidy dataset.
     * Run the run_analysis_width_tidy_data.R if you want a width tidy dataset
-        The scripts can be executed by using the function source("name of the script.R") or copying the code in the file and pasting it in the R console.
+      * The scripts can be executed by using the function source("name of the script.R") or copying the code in the file and pasting it in the R console.
 4. After the execution of the script has finished a .txt file will appear in the working directory. To take a view of the file in R:
     * If script run_analysis_long_tidy_data.R was executed, the file will be named longTidyData.txt. Therefore, input in the R console these two commands:
-        data <- read.table("longTidyData.txt", head = TRUE)
-        View(data)
+        * data <- read.table("longTidyData.txt", head = TRUE)
+        * View(data)
     * If script run_analysis_width_tidy_data.R was executed, the file will be named widthTidyData.txt. Therefore, input in the R console these two commands:
-        data <- read.table("widthTidyData.txt", head = TRUE)
-        View(data)
+        * data <- read.table("widthTidyData.txt", head = TRUE)
+        * View(data)
